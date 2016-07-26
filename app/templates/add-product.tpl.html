@@ -1,6 +1,6 @@
-<form>
+<form ng-submit="vm.addProduct(product)">
   <p class="control">
-    <input class="input" type="text" placeholder="Product Name">
+    <input class="input" type="text" placeholder="Product Name" ng-model="product.name">
   </p>
   <p class="control has-addons">
     <span class="select">
@@ -10,9 +10,12 @@
         <option>€</option>
       </select>
     </span>
-    <input class="input is-expanded" type="text" placeholder="Product Price">
+    <input class="input is-expanded" type="text" placeholder="Product Price" ng-model="product.price">
   </p>
   <p class="control">
-    <textarea class="textarea" placeholder="Product Description"></textarea>
+    <textarea class="textarea" placeholder="Product Description" ng-model="product.description"></textarea>
+  </p>
+  <p class="control">
+    <button class="button">Add Product</button>
   </p>
 </form>

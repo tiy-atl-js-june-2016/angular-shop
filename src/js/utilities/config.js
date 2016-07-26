@@ -13,7 +13,8 @@ function config ($stateProvider, $urlRouterProvider) {
     })
     .state('root.addProduct', {
       url: '/add-product',
-      templateUrl: 'templates/add-product.tpl.html'
+      templateUrl: 'templates/add-product.tpl.html',
+      controller: 'AddController as vm'
     })
 
     // States pertaining to users
