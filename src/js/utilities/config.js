@@ -5,10 +5,18 @@ function config ($stateProvider, $urlRouterProvider) {
       abstract: true,
       templateUrl: 'templates/layout.tpl.html'
     })
+
+    // States pertaining to the store
     .state('root.home', {
       url: '/',
       templateUrl: 'templates/home.tpl.html'
-    });
+    })
+    .state('root.addProduct', {
+      url: '/add-product',
+      templateUrl: 'templates/add-product.tpl.html'
+    })
+
+    // States pertaining to users
 
   $urlRouterProvider.otherwise('/');
 
