@@ -1,4 +1,4 @@
-function RegisterController (UserService) {
+function RegisterController (UserService, $cookies) {
 
   let vm = this;
   vm.createUser = createUser;
@@ -11,5 +11,5 @@ function RegisterController (UserService) {
 
 }
 
-RegisterController.$inject = ['UserService'];
+RegisterController.$inject = ['UserService', '$cookies'];
 export { RegisterController };
