@@ -17,6 +17,11 @@ function config ($stateProvider, $urlRouterProvider) {
     })
 
     // States pertaining to users
+    .state('root.register', {
+      url: '/register',
+      templateUrl: 'templates/register.tpl.html',
+      controller: 'RegisterController as vm'
+    })
 
   $urlRouterProvider.otherwise('/');
 
