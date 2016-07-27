@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="product in vm.products">
+      <td>{{ product.data.name }}</td>
+      <td>${{ product.data.price }}</td>
+    </tr>
+  </tbody>
+</table>

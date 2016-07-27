@@ -1,10 +1,12 @@
-function LayoutController (UserService, $rootScope) {
+function LayoutController (UserService, $rootScope, CartService) {
 
   let vm = this;
   vm.logOut = logOut;
   vm.loggedIn = false;
   vm.cartCount = 0;
   vm.cartTotal = 0;
+
+  init();
 
   $rootScope.$on('loginChange', (event, status) => {
     vm.loggedIn = status;
@@ -15,6 +17,17 @@ function LayoutController (UserService, $rootScope) {
     vm.cartTotal += Number(product.data.price);
   });
 
+  function init () {
+
+    vm.loggedIn = UserService.isLoggedIn();
+
+    let products = CartService.getProducts();
+    products.forEach( product => {
+      vm.cartCount ++;
+      vm.cartTotal += Number(product.data.price);
+    });
+  }
+
   function logOut () {
     UserService.logOut();
     vm.loggedIn = false;
@@ -22,5 +35,5 @@ function LayoutController (UserService, $rootScope) {
 
 }
 
-LayoutController.$inject = ['UserService', '$rootScope'];
+LayoutController.$inject = ['UserService', '$rootScope', 'CartService'];
 export { LayoutController };

@@ -18,6 +18,11 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/add-product.tpl.html',
       controller: 'AddController as vm'
     })
+    .state('root.cart', {
+      url: '/cart',
+      templateUrl: 'templates/cart.tpl.html',
+      controller: 'CartController as vm'
+    })
 
     // States pertaining to users
     .state('root.register', {

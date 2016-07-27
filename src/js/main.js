@@ -13,10 +13,12 @@ import { LoginController } from './controllers/login.controller';
 import { AddController } from './controllers/add.controller';
 import { LayoutController } from './controllers/layout.controller';
 import { ListController } from './controllers/list.controller';
+import { CartController } from './controllers/cart.controller';
 
 // Import some services
 import { UserService } from './services/user.service';
 import { ProductService } from './services/product.service';
+import { CartService } from './services/cart.service';
 
 angular
   .module('app', ['ui.router', 'ngCookies'])
@@ -28,6 +30,8 @@ angular
   .controller('AddController', AddController)
   .controller('LayoutController', LayoutController)
   .controller('ListController', ListController)
+  .controller('CartController', CartController)
   .service('UserService', UserService)
-  .service('ProductService', ProductService);
+  .service('ProductService', ProductService)
+  .service('CartService', CartService);
 
