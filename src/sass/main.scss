@@ -8,3 +8,22 @@
   padding-top: 25px;
 }
 .cart-count { padding-right: 5px; }
+
+.products {
+  .card {
+    max-width: 250px;
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    .card-content {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.footer {
+  clear: both;
+}

@@ -1,13 +1,19 @@
 function ProductService (SERVER, $http, UserService) {
 
-  let user = UserService.getUser();
-  let url = SERVER.URL + user + '/' + SERVER.SHOP_NAME;
   this.createProduct = createProduct;
+  this.getProducts   = getProducts;
 
+  function shopUrl () {
+    let user = UserService.getUser();
+    return SERVER.URL + user + '/' + SERVER.SHOP_NAME;
+  }
 
   function createProduct (product) {
-    console.log(url);
-    return $http.post(url, product, UserService.headers());
+    return $http.post(shopUrl(), product, UserService.headers());
+  }
+
+  function getProducts () {
+    return $http.get(shopUrl(), UserService.headers());
   }
 
 }

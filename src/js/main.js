@@ -12,6 +12,7 @@ import { RegisterController } from './controllers/register.controller';
 import { LoginController } from './controllers/login.controller';
 import { AddController } from './controllers/add.controller';
 import { LayoutController } from './controllers/layout.controller';
+import { ListController } from './controllers/list.controller';
 
 // Import some services
 import { UserService } from './services/user.service';
@@ -26,6 +27,7 @@ angular
   .controller('LoginController', LoginController)
   .controller('AddController', AddController)
   .controller('LayoutController', LayoutController)
+  .controller('ListController', ListController)
   .service('UserService', UserService)
   .service('ProductService', ProductService);
 

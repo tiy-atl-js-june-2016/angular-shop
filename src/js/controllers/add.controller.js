@@ -1,4 +1,4 @@
-function AddController (ProductService) {
+function AddController (ProductService, $state) {
 
   let vm = this;
   vm.addProduct = addProduct;
@@ -6,11 +6,11 @@ function AddController (ProductService) {
 
   function addProduct (product) {
     ProductService.createProduct(product).then( res => {
-      console.log(res);
+      $state.go('root.home');
     });
   }
 
 }
 
-AddController.$inject = ['ProductService'];
+AddController.$inject = ['ProductService', '$state'];
 export { AddController };

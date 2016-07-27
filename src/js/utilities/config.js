@@ -10,7 +10,8 @@ function config ($stateProvider, $urlRouterProvider) {
     // States pertaining to the store
     .state('root.home', {
       url: '/',
-      templateUrl: 'templates/home.tpl.html'
+      templateUrl: 'templates/home.tpl.html',
+      controller: 'ListController as vm'
     })
     .state('root.addProduct', {
       url: '/add-product',
