@@ -1,19 +1,19 @@
 <div class="products">
-  <div class="card" ng-repeat="product in vm.products">
+  <div class="card" ng-repeat="product in vm.products" data-id="{{ product.id }}">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img src="http://placehold.it/200x200" alt="{{ product.name }}">
+        <img src="http://placehold.it/200x200" alt="{{ product.data.name }}">
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-5">{{ product.name }}</p>
-          <p class="subtitle is-6">${{ product.price }}</p>
+          <p class="title is-5">{{ product.data.name }}</p>
+          <p class="subtitle is-6">${{ product.data.price }}</p>
         </div>
       </div>
       <div class="content">
-        <button class="button">Add to Cart</button>
+        <button class="button" ng-click="vm.addToCart(product)">Add to Cart</button>
       </div>
     </div>
   </div>

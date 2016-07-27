@@ -14,8 +14,9 @@
 
       <span class="nav-item">
         <a class="button is-primary" href="#">
-          <span class="cart-count">0</span>
-          <span>Items In Cart</span>
+          <span class="cart-count">{{ vm.cartCount }}</span>
+          <span>Items</span>
+          <span class="cart-total" ng-show="vm.cartTotal"> ${{ vm.cartTotal }}</span>
         </a>
       </span>
     </div>
