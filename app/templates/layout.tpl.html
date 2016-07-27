@@ -8,8 +8,9 @@
       <a class="nav-item" href="/#/">Home</a>
       <a class="nav-item" href="/#/add-product">Add</a>
 
-      <a class="nav-item" href="/#/login">Login</a>
-      <a class="nav-item" href="/#/register">Register</a>
+      <a class="nav-item" ng-hide="vm.loggedIn" href="/#/login">Login</a>
+      <a class="nav-item" ng-hide="vm.loggedIn" href="/#/register">Register</a>
+      <a class="nav-item" ng-show="vm.loggedIn" href="#" ng-click="vm.logOut()">Logout</a>
 
       <span class="nav-item">
         <a class="button is-primary" href="#">

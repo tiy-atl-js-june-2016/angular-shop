@@ -6,6 +6,7 @@ function ProductService (SERVER, $http, UserService) {
 
 
   function createProduct (product) {
+    console.log(url);
     return $http.post(url, product, UserService.headers());
   }
 
