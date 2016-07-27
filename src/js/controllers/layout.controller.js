@@ -22,10 +22,13 @@ function LayoutController (UserService, $rootScope, CartService) {
     vm.loggedIn = UserService.isLoggedIn();
 
     let products = CartService.getProducts();
-    products.forEach( product => {
-      vm.cartCount ++;
-      vm.cartTotal += Number(product.data.price);
-    });
+    if (products) {
+      products.forEach( product => {
+        vm.cartCount ++;
+        vm.cartTotal += Number(product.price);
+      });
+    }
+
   }
 
   function logOut () {

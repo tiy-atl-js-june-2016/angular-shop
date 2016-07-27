@@ -7,15 +7,19 @@ function CartService ($cookies) {
   function pushProducts (product) {
     let products = $cookies.getObject('products');
     if (products) {
-      products.push(product);
+      products.push(rebuildObj(product));
     } else {
-      products = [product];
+      products = [rebuildObj(product)];
     }
     $cookies.putObject('products', products);
   }
 
   function getProducts () {
     return $cookies.getObject('products');
+  }
+
+  function rebuildObj (product) {
+    return { name: product.data.name, price: product.data.price, id: product.id };
   }
 
 }
