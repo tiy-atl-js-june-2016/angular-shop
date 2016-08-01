@@ -1,4 +1,4 @@
-function ListController (ProductService, $scope, CartService) {
+function ListController (ProductService, $scope, CartService, UserService) {
 
   let vm = this;
   vm.addToCart = addToCart;
@@ -18,5 +18,5 @@ function ListController (ProductService, $scope, CartService) {
 
 }
 
-ListController.$inject = ['ProductService', '$scope', 'CartService'];
+ListController.$inject = ['ProductService', '$scope', 'CartService', 'UserService'];
 export { ListController };

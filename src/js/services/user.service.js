@@ -1,12 +1,12 @@
-function UserService (SERVER, $http, $cookies) {
+function UserService (SERVER, $http, $cookies, $state) {
 
-  this.signup     = signup;
-  this.login      = login;
-  this.headers    = headers;
-  this.getUser    = getUser;
-  this.logOut     = logOut;
-  this.isLoggedIn = isLoggedIn;
-
+  this.signup       = signup;
+  this.login        = login;
+  this.headers      = headers;
+  this.getUser      = getUser;
+  this.logOut       = logOut;
+  this.isLoggedIn   = isLoggedIn;
+  
   function signup (user) {
     return $http.post(SERVER.URL + 'signup', user);
   }
@@ -36,5 +36,5 @@ function UserService (SERVER, $http, $cookies) {
 
 }
 
-UserService.$inject = ['SERVER', '$http', '$cookies'];
+UserService.$inject = ['SERVER', '$http', '$cookies', '$state'];
 export { UserService };
